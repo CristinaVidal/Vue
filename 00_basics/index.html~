@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta chatset="utf-8">
+		<title>Vue.js test</title>
+	</head>
+	<body>
+		<div id="app">
+			Message: {{ message }}
+			Price: {{ price }}
+			Details: {{ details }}
+		</div>
+		<script src="https://unpkg.com/vue"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
