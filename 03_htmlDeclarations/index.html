@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta chatset="utf-8">
+		<title>Vue.js test</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div id="app1">
+			<h1 class="text-center">App 1: v-html</h1>
+			<div v-html="tableHTML">
+			</div>
+		</div>
+		<hr><br><br>
+
+		<div id="app2">
+			<h1 class="text-center">App 2: v-bind</h1>
+			<img v-bind:src="imageSource" alt="cat">
+			<img :src="imageSource" alt="cat"><!--Same-->
+		<hr><br><br>
+		</div>	
+		<hr><br><br>
+
+		<script src="https://unpkg.com/vue"></script>
+		<script src="main.js"></script>
+	</body>
+</html>

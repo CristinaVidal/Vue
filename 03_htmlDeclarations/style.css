@@ -1,0 +1,7 @@
+img {
+	width: 150px;
+	display: block;
+	margin: 1em auto;
+	border: 3px inset green;
+	box-shadow: 0px 4px 6px 4px grey;
+}
