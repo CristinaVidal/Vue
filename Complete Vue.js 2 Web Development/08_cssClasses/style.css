@@ -1,18 +1,15 @@
 .flex {
 	display: flex;
 }
+.flex--v-center {
+	align-items: center;
+}
 .flex--h-center {
 	justify-content: center;
 }
 
-.standar {
-	width: 200px;
-	height: 200px;
-	background: gray;
-}
-
 .withBackground {
-	background: green;
+	background: green !important;
 }
 .withBorder {
 	border: 2px inset blue;
@@ -24,7 +21,39 @@
 	border-radius: 20em;
 }
 
+.allSelected, .notAllSelected {
+	width: 200px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 1em;
+}
+
+.allSelected {
+	background: green;
+	color: black;
+}
+.allSelected:before {
+	content: 'All selected';
+}
+.notAllSelected {
+	background: red;
+	color: white;
+}
+.notAllSelected:before {
+	content: 'not all selected';
+}
+
 /*Override bootstrap style*/
 .form-control:focus {
 	box-shadow: none;
 }
+/**/
+
+#test {
+	width: 200px;
+	height: 200px;
+	background: gray;
+}
+

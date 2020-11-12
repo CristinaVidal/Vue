@@ -25,14 +25,14 @@
 				</div>
 			</form>
 			<!--Div to apply styles-->
-			<div class="flex flex--h-center">
-				<div :class="{
-					    'standar': true,
+			<div class="flex flex--h-center flex--v-center">
+				<div id="test" :class="{
 					    'withBorder': checkBorder,
 					    'withBackground': checkBackground,
 					    'withRadius': checkRadius
 					    }">
 				</div>
+				<div :class="isAllSelected() ? 'allSelected' : 'notAllSelected'"></div>
 			</div>
 			<!---->
 		</div>

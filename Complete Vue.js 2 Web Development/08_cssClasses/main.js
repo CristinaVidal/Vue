@@ -4,5 +4,12 @@ const app = new Vue({
 		checkBorder: false,
 		checkBackground: false,
 		checkRadius: false
+	},
+	methods: {
+		isAllSelected() {
+			return this.checkBorder &&
+				this.checkBackground &&
+				this.checkRadius;
+		}
 	}
 });
