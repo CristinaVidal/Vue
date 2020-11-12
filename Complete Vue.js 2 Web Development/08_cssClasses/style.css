@@ -1,0 +1,30 @@
+.flex {
+	display: flex;
+}
+.flex--h-center {
+	justify-content: center;
+}
+
+.standar {
+	width: 200px;
+	height: 200px;
+	background: gray;
+}
+
+.withBackground {
+	background: green;
+}
+.withBorder {
+	border: 2px inset blue;
+}
+.withRadius {
+	border-radius: 20em;
+}
+.withRadius {
+	border-radius: 20em;
+}
+
+/*Override bootstrap style*/
+.form-control:focus {
+	box-shadow: none;
+}

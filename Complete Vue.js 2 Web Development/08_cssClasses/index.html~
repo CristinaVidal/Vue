@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta chatset="utf-8">
+		<title>Vue.js test</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div id="app">
+			<form class="mb-4">
+				<div class="row">
+					<div class="col-4">
+						<label for="checkBorder" class="text-center w-100">Add border</label>
+						<input class="form-control" type="checkbox" id="checkBorder" v-model="checkBorder">
+					</div>
+					<div class="col-4">
+						<label for="checkBackground" class="text-center w-100">Add background</label>
+						<input class="form-control" type="checkbox" id="checkBackground" v-model="checkBackground">
+					</div>
+				</div>
+			</form>
+			<!--Div to apply styles-->
+			<div class="flex flex--h-center">
+				<div :class="{
+					    'standar': true,
+					    'withBorder': checkBorder,
+					    'withBackground': checkBackground,
+					    'withRadius': checkRadius
+					    }">
+				</div>
+			</div>
+			<!---->
+		</div>
+
+		<script src="https://unpkg.com/vue"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
