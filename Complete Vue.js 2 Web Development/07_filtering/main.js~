@@ -25,8 +25,7 @@ const app = new Vue({
 	},
 	methods: {
 		filterRow(person) {
-			return 
-				this.filterUserState == person.active;
+			return this.filterUserState === person.active;
 		}
 	}
 });

@@ -25,7 +25,12 @@ const app = new Vue({
 	},
 	methods: {
 		filterRow(person) {
-			return this.filterUserState === person.active;
+			return this.filterUserState === person.active &&
+				((!this.filterField || !this.filterQuery) || (
+					this.filterField === 'name' && person.name.includes(this.filterQuery)
+					||
+					this.filterField === 'age' && person.age === Number(this.filterQuery)
+				));
 		}
 	}
 });
