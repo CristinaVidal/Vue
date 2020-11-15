@@ -1,0 +1,7 @@
+Vue.component('my-component', {
+	template: '<template><h1>Hey! I\'m a component</h1><p>Aaaaa bbbbb ccccc ddddd</p></template>'
+});
+
+const app = new Vue({
+	el: '#app'
+});
