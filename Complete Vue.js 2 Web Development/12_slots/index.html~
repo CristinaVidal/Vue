@@ -8,7 +8,6 @@
 	</head>
 	<body>
 		<div id="app">
-			{{ modalVisible }}
 			<modal-window :visible="modalVisible"></modal-window>
 			<button @click="onClickOpenModal()">Open modal</button>
 		</div>

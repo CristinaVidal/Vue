@@ -1,5 +1,5 @@
 Vue.component('modal-window', {
-	template: `<div class="modal fade" :class="{ 'block': visible }">
+	template: `<div class="modal fade">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header"></div>
