@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta chatset="utf-8">
+		<title>Vue.js test</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div id="app" class="container">
+			<my-box :visible="showBox">
+				<span slot="title">Hey!</span>
+				<p>
+					I'm here, again!
+				</p>
+				<p slot="footer">
+					ñeñeñe
+				</p>
+			</my-box>
+			<button @click="onClickShowBox()" v-if="!showBox">Show a box</button>
+		</div>
+
+		<script src="https://unpkg.com/vue"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
