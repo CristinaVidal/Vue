@@ -7,7 +7,7 @@ Vue.component('my-box', {
 				<slot></slot> <!-- Default content -->
 			</p>
 			<div>
-				<slot name="footer"></slot>
+				<slot name="footer">BTW, I'm defaut content :o</slot>
 			</div>
 		   </div>`,
 	props: {
