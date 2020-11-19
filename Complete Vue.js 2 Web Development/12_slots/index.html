@@ -4,11 +4,15 @@
 		<meta chatset="utf-8">
 		<title>Vue.js test</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<div id="app">
-			<modal-window :visible="modalVisible"></modal-window>
-			<button @click="onClickOpenModal()">Open modal</button>
+		<div id="app" class="container">
+			<my-box :visible="buttonClicked">
+				I pass this text to the box component ! Woaoh (xd)
+				#dynamic
+			</my-box>
+			<button @click="onClickShowBox()" v-if="!buttonClicked">Show a box</button>
 		</div>
 
 		<script src="https://unpkg.com/vue"></script>
