@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta chatset="utf-8">
+		<title>Vue.js test</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+	<body>
+		<div id="app">
+			<template>
+				<form>
+					<div class="row m-0">
+						<div class="col-4 p-2">
+							<label for="fiterField">
+								Field:<br>
+								<select id="filterField" v-model="filterField">
+									<option value="">Disable filters</option>
+									<option value="name">Name</option>
+									<option value="age">Age</option>
+								</select>
+							</label>
+						</div>
+						<div class="col-4 p-2">
+							<template v-if="filterField">
+								<label for="filterQuery">
+									<span v-if="filterField === 'name'">Includes:</span>
+									<span v-else>Is:</span>
+									<br>
+									<input type="text" id="filterQuery" v-model="filterQuery">
+								</label>
+							</template>
+						</div>
+						<div class="col-4 p-2">
+							<span>
+								Active:<br>
+								<label for="userStateActive">
+									Yes:
+									<input type="radio" 
+									       id="userStateActive"
+									       :value="true"
+									       v-model="filterUserState">
+								</label>
+								<label for="userStateInactive">
+									No:
+									<input type="radio" 
+									       :value="false" 
+									       id="userStateInactive"
+									       v-model="filterUserState">
+								</label>
+							</span>
+						</div>
+					</div>
+					<table class="table" v-if="people">
+						<template v-for="individual in people">
+							<team-member :person="individual"></team-member>
+						</template>
+						<tr>
+							<th>Name</th>
+							<th>Age</th>
+							<th>Active</th>
+						</tr>
+						<script type="text/x-template" id="team-member-template" v-show="filterRow(person)">
+							<tr>
+								<td> {{ person.name }} </td>
+								<td> {{ person.age }} </td>
+								<td> {{ person.active ? 'Yes' : 'No' }} </td>
+							</tr>
+						</script>
+					</table>
+				</form>
+			</template>
+		</div>
+
+		<script src="https://unpkg.com/vue"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
