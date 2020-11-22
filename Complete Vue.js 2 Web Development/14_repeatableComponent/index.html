@@ -52,18 +52,12 @@
 					</div>
 					<table class="table" v-if="people">
 						<template v-for="individual in people">
-							<team-member :person="individual"></team-member>
+							ñe  
+							<team-member v-bind:person="individual"></team-member>
 						</template>
-						<tr>
-							<th>Name</th>
-							<th>Age</th>
-							<th>Active</th>
-						</tr>
-						<script type="text/x-template" id="team-member-template" v-show="filterRow(person)">
+						<script type="text/x-template" id="team-member-template">
 							<tr>
-								<td> {{ person.name }} </td>
-								<td> {{ person.age }} </td>
-								<td> {{ person.active ? 'Yes' : 'No' }} </td>
+								<td>ddd</td>
 							</tr>
 						</script>
 					</table>
