@@ -4,8 +4,15 @@
 		<meta chatset="utf-8">
 		<title>Vue.js test</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
+		<script type="text/x-template" id="team-member-template">
+			<tr :class="getPersonCssClass()" v-show="filterRow()">
+				<td>{{ person.name }}</td>
+				<td>{{ person.age }}</td>
+			</tr>
+		</script>
 		<div id="app">
 			<template>
 				<form>
@@ -13,7 +20,7 @@
 						<div class="col-4 p-2">
 							<label for="fiterField">
 								Field:<br>
-								<select id="filterField" v-model="filterField">
+								<select id="filterField" v-model="filter.field">
 									<option value="">Disable filters</option>
 									<option value="name">Name</option>
 									<option value="age">Age</option>
@@ -21,12 +28,12 @@
 							</label>
 						</div>
 						<div class="col-4 p-2">
-							<template v-if="filterField">
-								<label for="filterQuery">
-									<span v-if="filterField === 'name'">Includes:</span>
+							<template v-if="filter.field">
+								<label for="filter.query">
+									<span v-if="filter.field === 'name'">Includes:</span>
 									<span v-else>Is:</span>
 									<br>
-									<input type="text" id="filterQuery" v-model="filterQuery">
+									<input type="text" id="filterQuery" v-model="filter.query">
 								</label>
 							</template>
 						</div>
@@ -38,28 +45,25 @@
 									<input type="radio" 
 									       id="userStateActive"
 									       :value="true"
-									       v-model="filterUserState">
+									       v-model="filter.userState">
 								</label>
 								<label for="userStateInactive">
 									No:
 									<input type="radio" 
 									       :value="false" 
 									       id="userStateInactive"
-									       v-model="filterUserState">
+									       v-model="filter.userState">
 								</label>
 							</span>
 						</div>
 					</div>
 					<table class="table" v-if="people">
 						<template v-for="individual in people">
-							ñe  
-							<team-member v-bind:person="individual"></team-member>
+							<team-member 
+								:person="individual"
+								:filter="filter">
+							</team-member>
 						</template>
-						<script type="text/x-template" id="team-member-template">
-							<tr>
-								<td>ddd</td>
-							</tr>
-						</script>
 					</table>
 				</form>
 			</template>

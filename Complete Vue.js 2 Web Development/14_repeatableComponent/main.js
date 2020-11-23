@@ -1,7 +1,23 @@
 Vue.component('team-member', {
 	template: '#team-member-template',
 	props: {
-		person: Object
+		person: Object,
+		filter: Object,
+	},
+	computed: {
+	},
+	methods: {
+		getPersonCssClass() {
+			return this.person && this.person.active ? 'active' : 'inactive';
+		},
+		filterRow() {
+			return this.filter.userState === this.person.active &&
+				((!this.filter.field || !this.filter.query) || (
+					this.filter.field === 'name' && this.person.name.includes(this.filter.query)
+					||
+					this.filter.field === 'age' && this.person.age === Number(this.filter.query)
+				));
+		}
 	}
 });
 
@@ -26,18 +42,10 @@ const app = new Vue({
 			active: true
 		}],
 		currency: '€',
-		filterField: '', // select
-		filterQuery: '', // textbox
-		filterUserState: true // radio button
-	},
-	methods: {
-		filterRow(person) {
-			return this.filterUserState === person.active &&
-				((!this.filterField || !this.filterQuery) || (
-					this.filterField === 'name' && person.name.includes(this.filterQuery)
-					||
-					this.filterField === 'age' && person.age === Number(this.filterQuery)
-				));
+		filter: {
+			field: '', // select
+			query: '', // textbox
+			userState: true // radio button
 		}
 	}
 });
