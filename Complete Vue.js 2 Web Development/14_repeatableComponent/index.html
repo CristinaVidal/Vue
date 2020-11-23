@@ -7,15 +7,8 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<script type="text/x-template" id="team-member-template">
-			<tr :class="getPersonCssClass()" v-show="filterRow()">
-				<td>{{ person.name }}</td>
-				<td>{{ person.age }}</td>
-			</tr>
-		</script>
-		<div id="app">
-			<template>
-				<form>
+		<script type="text/x-template" id="filtering-template">
+			<form>
 					<div class="row m-0">
 						<div class="col-4 p-2">
 							<label for="fiterField">
@@ -57,15 +50,25 @@
 							</span>
 						</div>
 					</div>
-					<table class="table" v-if="people">
-						<template v-for="individual in people">
-							<team-member 
-								:person="individual"
-								:filter="filter">
-							</team-member>
-						</template>
-					</table>
 				</form>
+		</script>
+		<script type="text/x-template" id="team-member-template">
+			<tr :class="getPersonCssClass()" v-show="filterRow()">
+				<td>{{ person.name }}</td>
+				<td>{{ person.age }}</td>
+			</tr>
+		</script>
+		<div id="app">
+			<template>
+				<filtering :filter="filter"></filtering>
+				<table class="table" v-if="people">
+					<template v-for="individual in people">
+						<team-member 
+						  :person="individual"
+						  :filter="filter">
+						</team-member>
+					</template>
+				</table>
 			</template>
 		</div>
 

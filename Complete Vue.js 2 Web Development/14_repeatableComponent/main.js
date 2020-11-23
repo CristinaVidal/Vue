@@ -1,3 +1,10 @@
+Vue.component('filtering', {
+	template: '#filtering-template',
+	props: {
+		filter: Object
+	}
+});
+
 Vue.component('team-member', {
 	template: '#team-member-template',
 	props: {
