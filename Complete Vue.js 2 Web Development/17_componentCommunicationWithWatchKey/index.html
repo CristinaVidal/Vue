@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta chatset="utf-8">
+		<title>Vue.js test</title>
+		<link rel="stylesheet" href="../bootstrap.min.css">
+	</head>
+	<body>
+		<!--Components-->
+		<script type="text/x-template" id="my-form-template">
+			<h6>{{ formTitle }}</h6>
+			<form>
+				<input type="number" @change="onChangeNumber">
+			</form>
+		</script>
+		<!---->
+		<div id="app">
+			<h1 class="text-center">Child components:</h1>
+			<hr>
+			<div class="row">
+				<div class="col-4 p-1">
+				</div>
+				<div class="col-2 p-1">
+					<my-form form-title="First form number" v-on:change-number="onChangeNumber">
+					</my-form>
+				</div>
+				<div class="col-2 p-1">
+					<my-form form-title="Second form number" v-on:change-number="onChangeNumber">
+					</my-form>
+				</div>
+				<div class="col-4 p-1">
+				</div>
+			</div>
+			<hr>
+			<p class="text-center">...</p>
+			<h1 class="text-center">App component:</h1>
+			<div class="card mt-3 text-center">
+				<h5 class="card-title">Last number value received</h5>
+				<div class="card-content">{{ lastNumber ? lastNumber : 'I don\'t know :(' }}</div>
+			</div>
+		</div>
+		<script src="../vue.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
