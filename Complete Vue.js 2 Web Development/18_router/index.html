@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta chatset="utf-8">
+		<title>Vue.js test</title>
+		<link rel="stylesheet" href="../bootstrap.min.css">
+	</head>
+	<body>
+		<!--Components-->
+		<script type="text/x-template" id="homepage">
+			<div>
+				<h1>Hey! I'm the Home page</h1>
+				<p>
+					Welcome to my horrible simple page
+				</p>
+			</div>
+		</script>
+		<script type="text/x-template" id="aboutpage">
+			<div>
+				<h1>About me</h1>
+				<p>
+					Hmmm. I'm Cristina<br><br>
+					End.
+				</p>
+			</div>
+		</script>
+		<!--END Components-->
+		<header>
+			* Header *
+		</header>
+		<div id="app">
+			<main>
+				<router-view></router-view>
+			</main>
+		</div>
+		<footer>
+			* Footer *
+		</footer>
+
+		<script src="../vue.js"></script>
+		<script src="../vue-router.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
