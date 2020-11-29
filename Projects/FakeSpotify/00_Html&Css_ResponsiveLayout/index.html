@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Música para todos - UOCIFY</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="images/logos/uocify_icon.svg">
+	<!-- <script src="https://kit.fontawesome.com/def29285fd.js" crossorigin="anonymous"></script> -->
+	<link href="fontawesome/css/all.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/jquery-3.5.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		/* 
+			Corrección para dispositivos móviles / páginas de renderizado de proyectos git (http://htmlpreview.github.io/) 
+			respecto a los tabs
+		*/
+		$(document).ready(function () {
+			$('#nav-tabs-busqueda a').on('click ', function (event) {
+				const href = event.currentTarget.href;
+				if (href && href.indexOf('#') !== -1) {
+					const idElement = href.substring(href.lastIndexOf('#'), href.length);
+
+					// Quitar clase
+					$('#tab-content-busqueda .tab-pane.show').toggleClass('active show')
+					// Añadir la clase
+					$(idElement).toggleClass('active show');
+				}
+			});
+		});
+	</script>
+	<!--Compilación SCSS-->
+</head>
+
+<body>
+	<div class="contenedor contenedor--principal">
+		<header>
+			<div class="flex flex--horizontal-space-between flex--vertical-center w-100 pl-3 pr-2 pt-1 pb-1">
+				<!--Zona izquierda-->
+				<div class="flex flex--vertical-center w-100">
+					<img src="images/logos/uocify_logo.svg" alt="Logo" class="cabecera__logo">
+					<!--Buscador PC-->
+					<div class="ocultar-movil w-100">
+						<form class="mb-0">
+							<div class="input-icono ml-4 mr-3">
+								<button type="submit" class="input-icono__button">
+									<i class="fas fa-search input-icono__button__icono"></i>
+								</button>
+								<input id="busqueda-pc" type="text" class="form-control input-icono__input"
+									placeholder="Buscar">
+							</div>
+						</form>
+					</div>
+					<!---->
+				</div>
+				<!---->
+				<!--Zona derecha-->
+				<div class="flex flex--horizontal-end flex--vertical-center">
+					<p class="texto--md m-0 pr-2 ocultar-movil">Cristina</p>
+					<i class="fas fa-user icono icono--usuario mr-2"></i>
+				</div>
+				<!---->
+			</div>
+		</header>
+		<main>
+			<!--Buscador MÓVIL-->
+			<div class="mostrar-movil">
+				<form>
+					<div class="input-icono mb-4">
+						<button class="input-icono__button">
+							<i class="fas fa-search input-icono__button__icono"></i>
+						</button>
+						<input id="busqueda-movil" type="text" class="form-control input-icono__input"
+							placeholder="Buscar">
+					</div>
+				</form>
+			</div>
+			<!---->
+			<h1>
+				<span class="color-letra--principal">Resultados de </span>
+				<span id="nombre-resultado-busqueda">the beatles</span>
+			</h1>
+
+			<div class="contenedor--secundario">
+				<!--Navegación-->
+				<ul id="nav-tabs-busqueda" class="nav nav-tabs mb-3">
+					<li>
+						<a data-toggle="tab" href="#tab-todos" class="active">Todos</a>
+					</li>
+					<li>
+						<a data-toggle="tab" href="#tab-canciones">Canciones</a>
+					</li>
+					<li>
+						<a data-toggle="tab" href="#tab-albumes">Álbumes</a>
+					</li>
+					<li>
+						<a data-toggle="tab" href="#tab-artistas">Artistas</a>
+					</li>
+				</ul>
+				<!---->
+				<div id="tab-content-busqueda" class="tab-content">
+					<!--TODOS-->
+					<div id="tab-todos" class="tab-pane fade in active show">
+						<!--canciones-->
+						<section>
+							<h3 class="mb-3">
+								Canciones
+								<i class="fas fa-chevron-right texto--sm"></i>
+							</h3>
+							<table class="table">
+								<tbody>
+
+									<tr>
+										<td class="ocultar-xs">
+											<img class="rounded table__imagen" src="images/albums/let-it-be.jpg"
+												alt="Imagen de álbum">
+										</td>
+										<td>
+											<span lang="en">
+												Let It Be (Remastered 2009)
+												<span class="mostrar-movil small">
+													The Beatles
+												</span>
+											</span>
+										</td>
+										<td class="ocultar-movil">
+											<span lang="en">
+												The Beatles
+											</span>
+										</td>
+										<td class="ocultar-tablet">
+											<span lang="en">
+												Let It Be (Remastered)
+											</span>
+										</td>
+										<td class="ocultar-tablet">
+											04:03
+										</td>
+									</tr>
+
+									<tr>
+										<td class="ocultar-xs">
+											<img class="rounded table__imagen" src="images/albums/1.jpg"
+												alt="Imagen de álbum">
+										</td>
+										<td>
+											<span lang="en">
+												Hey Jude (Remastered 2015)
+												<span class="mostrar-movil small">
+													The Beatles
+												</span>
+											</span>
+										</td>
+										<td class="ocultar-movil">
+											<span lang="en">
+												The Beatles
+											</span>
+										</td>
+										<td class="ocultar-tablet">
+											<span lang="en">
+												1 (Remastered)
+											</span>
+										</td>
+										<td class="ocultar-tablet">
+											07:05
+										</td>
+									</tr>
+
+									<tr>
+										<td class="ocultar-xs">
+											<img class="rounded table__imagen" src="images/albums/1.jpg"
+												alt="Imagen de álbum">
+										</td>
+										<td>
+											<span lang="en">
+												Doy Tripper (Remastered 2015)
+												<span class="mostrar-movil small">
+													The Beatles
+												</span>
+											</span>
+										</td>
+										<td class="ocultar-movil">
+											<span lang="en">
+												The Beatles
+											</span>
+										</td>
+										<td class="ocultar-tablet">
+											<span lang="en">
+												1 (Remastered)
+											</span>
+										</td>
+										<td class="ocultar-tablet">
+											02:49
+										</td>
+									</tr>
+
+									<tr>
+										<td class="ocultar-xs">
+											<img class="rounded table__imagen" src="images/albums/abbey-road.jpg"
+												alt="Imagen de álbum">
+										</td>
+										<td>
+											<span lang="en">
+												Here Comes The Sun (Remastered 2009)
+												<span class="mostrar-movil small">
+													The Beatles
+												</span>
+											</span>
+										</td>
+										<td class="ocultar-movil">
+											<span lang="en">
+												The Beatles
+											</span>
+										</td>
+										<td class="ocultar-tablet">
+											<span lang="en">
+												Abbey Road (Remastered)
+											</span>
+										</td>
+										<td class="ocultar-tablet">
+											03:05
+										</td>
+									</tr>
+
+									<tr>
+										<td class="ocultar-xs">
+											<img class="rounded table__imagen" src="images/albums/rubber-soul.jpg"
+												alt="Imagen de álbum">
+										</td>
+										<td>
+											<span lang="en">
+												Michelle (Remastered 2009)
+												<span class="mostrar-movil small">
+													The Beatles
+												</span>
+											</span>
+										</td>
+										<td class="ocultar-movil">
+											<span lang="en">
+												The Beatles
+											</span>
+										</td>
+										<td class="ocultar-tablet">
+											<span lang="en">
+												Rubber Soul (Remastered)
+											</span>
+										</td>
+										<td class="ocultar-tablet">
+											02:42
+										</td>
+									</tr>
+
+									<tr>
+										<td class="ocultar-xs">
+											<img class="rounded table__imagen" src="images/albums/1.jpg"
+												alt="Imagen de álbum">
+										</td>
+										<td>
+											<span lang="en">
+												Help! (Remastered 2015)
+												<span class="mostrar-movil small">
+													The Beatles
+												</span>
+											</span>
+										</td>
+										<td class="ocultar-movil">
+											<span lang="en">
+												The Beatles
+											</span>
+										</td>
+										<td class="ocultar-tablet">
+											<span lang="en">
+												1 (Remastered)
+											</span>
+										</td>
+										<td class="ocultar-tablet">
+											02:19
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</section>
+						<!---->
+						<!--álbumes-->
+						<section>
+							<h3 class="mb-3">
+								Álbumes
+								<i class="fas fa-chevron-right texto--sm"></i>
+							</h3>
+							<div class="row">
+
+								<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+									<img class="tarjeta__imagen" src="images/albums/the-beatles.jpg"
+										alt="Imagen de álbum">
+									<h5 lang="en" class="tarjeta__titulo text-truncate">
+										The Beatles (Remastered)
+									</h5>
+									<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+										The Beatles
+									</h6>
+								</div>
+
+								<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+									<img class="tarjeta__imagen" src="images/albums/sgt-peppers.jpg"
+										alt="Imagen de álbum">
+									<h5 lang="en" class="tarjeta__titulo text-truncate">
+										Sgt. Pepper's Lonely Hearts Club Band
+									</h5>
+									<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+										The Beatles
+									</h6>
+								</div>
+
+								<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+									<img class="tarjeta__imagen" src="images/albums/let-it-be.jpg"
+										alt="Imagen de álbum">
+									<h5 lang="en" class="tarjeta__titulo text-truncate">
+										Let It Be (Remastered)
+									</h5>
+									<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+										The Beatles
+									</h6>
+								</div>
+
+								<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+									<img class="tarjeta__imagen" src="images/albums/magical-mystery-tour.jpg"
+										alt="Imagen de álbum">
+									<h5 lang="en" class="tarjeta__titulo text-truncate">
+										Magical Mystery Tour (Remastered)
+
+									</h5>
+									<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+										The Beatles
+									</h6>
+								</div>
+
+								<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+									<img class="tarjeta__imagen" src="images/albums/yellow-submarine.jpg"
+										alt="Imagen de álbum">
+									<h5 lang="en" class="tarjeta__titulo text-truncate">
+										Yellow Submarine Songtrack
+									</h5>
+									<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+										The Beatles
+									</h6>
+								</div>
+
+								<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+									<img class="tarjeta__imagen" src="images/albums/please-please-me.jpg"
+										alt="Imagen de álbum">
+									<h5 lang="en" class="tarjeta__titulo text-truncate">
+										Please Please Me (Remastered)
+									</h5>
+									<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+										The Beatles
+									</h6>
+								</div>
+							</div>
+						</section>
+						<!---->
+						<section>
+							<!--artistas-->
+							<h3 class="mb-3">
+								Artistas
+								<i class="fas fa-chevron-right texto--sm"></i>
+							</h3>
+
+							<div class="row">
+
+								<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+									<img class="tarjeta__imagen rounded-circle" src="images/artists/the-beatles.jpg"
+										alt="Imagen de artista">
+									<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+										The Beatles
+									</h5>
+									<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+										5.699.029 fans
+									</h6>
+								</div>
+
+								<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+									<img class="tarjeta__imagen rounded-circle"
+										src="images/artists/the-beatles-recovered.jpg" alt="Imagen de artista">
+									<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+										The Beatles Recovered Band
+									</h5>
+									<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+										187.118 fans
+									</h6>
+								</div>
+
+								<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+									<img class="tarjeta__imagen rounded-circle"
+										src="images/artists/the-beatles-tribute.jpg" alt="Imagen de artista">
+									<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+										The Beatles Tribute
+									</h5>
+									<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+										636 fans
+									</h6>
+								</div>
+
+								<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+									<img class="tarjeta__imagen rounded-circle" src="images/artists/empty.jpg"
+										alt="Imagen de artista">
+									<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+										The Beatles Acoustic Trio
+									</h5>
+									<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+										525 fans
+									</h6>
+								</div>
+
+								<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+									<img class="tarjeta__imagen rounded-circle" src="images/artists/empty.jpg"
+										alt="Imagen de artista">
+									<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+										The Beatles Symphony Orchestra
+									</h5>
+									<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+										708 fans
+									</h6>
+								</div>
+
+								<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+									<img class="tarjeta__imagen rounded-circle"
+										src="images/artists/the-beatles-revival-band.jpg" alt="Imagen de artista">
+									<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+										The Beatles Revival Band
+									</h5>
+									<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+										1767 fans
+									</h6>
+								</div>
+							</div>
+						</section>
+						<!---->
+					</div>
+					<!---->
+					<!--CANCIONES-->
+					<div id="tab-canciones" class="tab-pane fade">
+						<h2 class="mb-3">295 canciones</h2>
+						<table class="table">
+							<thead>
+								<tr class="ocultar-movil">
+									<th class="ocultar-xs"></th>
+									<th class="text-left">CANCIÓN</th>
+									<th class="text-left ocultar-movil">ARTISTA</th>
+									<th class="text-left ocultar-tablet">ÁLBUM</th>
+									<th class="text-right ocultar-tablet">D.</th>
+								</tr>
+							</thead>
+							<tbody>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/let-it-be.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Let It Be (Remastered 2009)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											Let It Be (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										04:03
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/1.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Hey Jude (Remastered 2015)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											1 (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										07:05
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/1.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Doy Tripper (Remastered 2015)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											1 (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										02:49
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/abbey-road.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Here Comes The Sun (Remastered 2009)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											Abbey Road (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										03:05
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/rubber-soul.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Michelle (Remastered 2009)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											Rubber Soul (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										02:42
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/1.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Help! (Remastered 2015)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											1 (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										02:19
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/1.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Yesterday (Remastered 2015)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											1 (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										02:05
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/please-please-me.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Twist And Shout (Remastered 2009)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											Please Please Me (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										02:35
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/abbey-road.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Come Together (Remastered 2009)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											Abbey Road (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										04:19
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/abbey-road.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Here Comes The Sun (2019 Mix)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											Abbey Road (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										03:05
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/1.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Eleanor Rigby (Remastered 2015)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											1 (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										02:05
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/1.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											I Want To Hold Your Hand (Remastered 2015)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											1 (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										02:25
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/the-beatles.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Blackbird (Remastered 2009)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											The Beatles (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										02:18
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/1.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											All You Need Is Love (Remastered 2015)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											1 (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										03:47
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/rubber-soul.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											In My Life (Remastered 2009)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											Rubber Soul (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										02:26
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/abbey-road.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Something (Remastered 2009)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											Abbey Road (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										03:02
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/abbey-road.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Come Together (2019 Mix)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											Abbey Road (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										04:20
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/the-beatles.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											While My Guitar Gently Weeps (Remastered 2009)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											The Beatles (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										04:45
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/1.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											She Loves You (Mono / Remastered)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											1 (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										02:20
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/1.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Penny Lane (Remastered 2015)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											1 (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										03:00
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/the-beatles-classics.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Don't Let Me Down (Remastered 2009)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											Past Masters (Vols. 1 & 2 / Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										03:35
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/1.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Love Me Do (Mono / Remastered)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											1 (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										02:20
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/1.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											A Hard Day's Night (Remastered 2015)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											1 (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										02:32
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/1.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Can't Buy Me Love (Remastered 2015)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											1 (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										02:11
+									</td>
+								</tr>
+
+								<tr>
+									<td class="ocultar-xs">
+										<img class="rounded table__imagen" src="images/albums/magical-mystery-tour.jpg"
+											alt="Imagen de álbum">
+									</td>
+									<td>
+										<span lang="en">
+											Strawberry Fields Forever (Remastered 2009)
+											<span class="mostrar-movil small">
+												The Beatles
+											</span>
+										</span>
+									</td>
+									<td class="ocultar-movil">
+										<span lang="en">
+											The Beatles
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										<span lang="en">
+											Magical Mystery Tour (Remastered)
+										</span>
+									</td>
+									<td class="ocultar-tablet">
+										04:07
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+					<!---->
+					<!--ÁLBUMES-->
+					<div id="tab-albumes" class="tab-pane fade">
+						<h2 class="mb-3">286 álbumes</h2>
+						<div class="row">
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/the-beatles.jpg" alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									The Beatles (Remastered)
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									The Beatles
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/sgt-peppers.jpg" alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									Sgt. Pepper's Lonely Hearts Club Band
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									The Beatles
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/let-it-be.jpg" alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									Let It Be (Remastered)
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									The Beatles
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/magical-mystery-tour.jpg"
+									alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									Magical Mystery Tour (Remastered)
+
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									The Beatles
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/yellow-submarine.jpg"
+									alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									Yellow Submarine Songtrack
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									The Beatles
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/please-please-me.jpg"
+									alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									Please Please Me (Remastered)
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									The Beatles
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/anthology3.jpg" alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									Anthology 3
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									The Beatles
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/with-the-beatles.jpg"
+									alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									With The Beatles (Remastered)
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									The Beatles
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/the-beatles-1967-1970.jpg"
+									alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									The Beatles 1967 - 1970 (Remastered)
+
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									The Beatles
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/the-beatles-1962-1966.jpg"
+									alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									The Beatles 1962 - 1966 (Remastered)
+
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									The Beatles
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/the-beatles-2.jpg"
+									alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									The Beatles
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									Aleh Ferreira
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/yellow-submarine-1.jpg"
+									alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									Yellow Submarine (Remastered)
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									The Beatles
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/love.jpg" alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									Love
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									The Beatles
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/the-beatles-white-album.jpg"
+									alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									The Beatles (White Album / Remastered)
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									The Beatles
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/the-beatles-1.jpg"
+									alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									The Beatles
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									Acoustic Lounge
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/songs-of-the-beatles.jpg"
+									alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									I Want The Beatles for Christmas
+
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									Various Artists
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/the-beatles-3.jpg"
+									alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									The Beatles
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									James Bourne
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/the-beatles-classics.jpg"
+									alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									The Beatles Classics
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									London Symphony Orchestra
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/best-of.jpg" alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									Best of The Beatles Vol.1
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									The Beatles Tribute
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/1.jpg" alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									1 (Remastered)
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									The Beatles
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/anthology2.jpg" alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									Anthology 2
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									The Beatles
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/the-beatles-nova.jpg"
+									alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									The Beatles Nova
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									Grazyna Auguscik
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/beatles-and-chill.jpg"
+									alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									Beatles and Chill
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									Yoga Beats
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/blackbird.jpg" alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									Blackbird - The Beatles Album
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									Milos Karadaglic
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen" src="images/albums/glee.jpg" alt="Imagen de álbum">
+								<h5 lang="en" class="tarjeta__titulo text-truncate">
+									Glee Sings The Beatles
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate">
+									Glee Cast
+								</h6>
+							</div>
+
+						</div>
+					</div>
+					<!---->
+					<!--ARTISTAS-->
+					<div id="tab-artistas" class="tab-pane fade">
+						<h2 class="mb-3">72 artistas</h2>
+						<div class="row">
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle" src="images/artists/the-beatles.jpg"
+									alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Beatles
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									5.699.029 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle"
+									src="images/artists/the-beatles-recovered.jpg" alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Beatles Recovered Band
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									187.118 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle" src="images/artists/the-beatles-tribute.jpg"
+									alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Beatles Tribute
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									636 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle" src="images/artists/empty.jpg"
+									alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Beatles Acoustic Trio
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									525 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle" src="images/artists/empty.jpg"
+									alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Beatles Symphony Orchestra
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									708 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle"
+									src="images/artists/the-beatles-revival-band.jpg" alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Beatles Revival Band
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									1767 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle"
+									src="images/artists/the-beatles-covered-1.jpg" alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Beatles Covered
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									86 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle"
+									src="images/artists/the-beatles-tribute-band.jpg" alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Beatles Tribute Band
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									480 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle"
+									src="images/artists/the-beatles-complete.jpg" alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Beatles Complete
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									13 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle" src="images/artists/the-silver-beatles.jpg"
+									alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Silver Beatles
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									288 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle" src="images/artists/empty.jpg"
+									alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Beatles Recovered Band
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									383 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle" src="images/artists/empty.jpg"
+									alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Beatles Symphonic Orchestra
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									136 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle"
+									src="images/artists/the-ultimate-beatles-cover-band.jpg" alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Ultimate Beatles Covered
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									748 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle" src="images/artists/empty.jpg"
+									alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									Yesterday - A Tribute To The Beatles
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									1676 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle"
+									src="images/artists/the-beatles-revival-band-1.jpg" alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Beatles Revival Band
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									193 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle" src="images/artists/empty.jpg"
+									alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									Made Famous By The Beatles
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									93 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle" src="images/artists/beatles-fan-club.jpg"
+									alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									Beatles Fan Club - (All Over The Place)
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									3583 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle"
+									src="images/artists/the-bornagen-beatles.jpg" alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Bornagen Beatles
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									57 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle"
+									src="images/artists/the-beatles-connection.jpg" alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Beatles Connection
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									377 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle"
+									src="images/artists/the-beatles-interviews.jpg" alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Beatles interviews
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									751 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle"
+									src="images/artists/tony-sheridan-and-the-beatles.jpg" alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									Tony Sheridan & The Beatles
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									77 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle"
+									src="images/artists/the-sounds-of-the-beatles.jpg" alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Sounds Of The Beatles
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									13 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle" src="images/artists/the-new-beatles.jpg"
+									alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The New Beatles
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									119 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle"
+									src="images/artists/the-beatles-with-tony-sheridan.jpg" alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Beatles With Tony Sheridan
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									150 fans
+								</h6>
+							</div>
+
+							<div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-2">
+								<img class="tarjeta__imagen rounded-circle" src="images/artists/empty.jpg"
+									alt="Imagen de artista">
+								<h5 lang="en" class="tarjeta__titulo text-truncate text-center">
+									The Beatles ft. Tony Sheridan
+								</h5>
+								<h6 lang="en" class="tarjeta__subtitulo text-truncate text-center">
+									280 fans
+								</h6>
+							</div>
+
+						</div>
+					</div>
+					<!---->
+				</div>
+			</div>
+		</main>
+	</div>
+</body>
+
+</html>
