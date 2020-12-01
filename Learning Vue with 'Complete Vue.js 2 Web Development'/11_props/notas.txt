@@ -1,4 +1,0 @@
-* Para mi
-
-Props serían los equivalentes (de momento por lo que veo) a los @Input de
-Angular
