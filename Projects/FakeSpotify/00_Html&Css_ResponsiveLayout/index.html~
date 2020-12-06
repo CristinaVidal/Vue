@@ -1725,7 +1725,6 @@
 	</div>
 	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
 	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
-	<!-- My Firebase configuration -->
 	<script src="js/firebase.js"></script>
 </body>
 
