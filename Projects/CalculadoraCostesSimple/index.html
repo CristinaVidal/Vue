@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta chatset="utf-8">
+		<title>Vue.js test</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+	<body class="m-3 p-3">
+		<h1 class="text-center mb-4">Calculadora de costes</h1>
+		
+		<div id="app">
+			<div class="row">
+				<label>Fecha inicio:</label>
+				<input type="date" v-model="date1" class="w-100 mb-3">
+				<label>Fecha fin:</label>
+				<input type="date" v-model="date2" class="w-100 mb-3">
+				<label>Coste:</label> 
+				<input type="number" v-model="cost" class="w-100 mb-3">
+				<br>
+				<button @click="calculate()" class="btn btn-primary w-100">Calcular</button>
+				<button :disabled="!results" @click="results = null" class="btn btn-secondary w-100 mt-2 mb-2">Vaciar tabla</button>
+				<table class="table" v-if="results">
+					<tr>
+						<th>Fin de mes</th>
+						<th>Coste</th>
+						<th>Días lunes-viernes</th>
+					</tr>
+					<tr v-for="result in results">
+						<td>{{ months[result.month] }}, {{ result.day }}</td>
+						<td>{{ result.cost }}</td>
+						<td>{{ result.laboralDays}}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<p class="text-center">
+			Autor: Cristina Vidal Gordo (cvidalgordo)
+			<br>
+			Objetivo: GP - PR2 - Ejercicio 2 - Pestaña 1
+		</p>
+		<script src="https://unpkg.com/vue"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
