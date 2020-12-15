@@ -1,0 +1,113 @@
+.ocultar-xs {
+  @media screen and ($max-xs) {
+    display: none;
+  }
+}
+
+.ocultar-movil {
+  @media screen and ($max-sm) {
+    display: none;
+  }
+}
+
+.mostrar-movil {
+  display: none;
+
+  @media screen and ($max-sm) {
+    display: block;
+  }
+}
+
+.ocultar-tablet {
+  @media screen and ($max-md) {
+    display: none;
+  }
+}
+
+// Generales pantalla media
+@media screen and ($max-lg) {
+  main {
+    margin: 5em 3em 1em; // Navegadores sin calc
+    margin: calc(#{$altura-cabecera} + 2em) 3em 1em;
+  }
+}
+
+// Generales tablet
+@media screen and ($max-md) {
+  body {
+    font-size: 1.5em;
+  }
+  main {
+    margin: 4em 1em 1em; // Navegadores sin calc
+    margin: calc(#{$altura-cabecera} + 1em) 1em 1em;
+  }
+  h1, .main-title {
+    font-size: 1.25em;
+  }
+  h2 {
+    font-size: 1.05em;
+  }
+  h3 {
+    font-size: 0.95em;
+  }
+  .nav-tabs {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .text-truncate {
+    white-space: normal; // Sin "truncate" en tablets y móviles
+    text-align: center;
+  }
+}
+
+// Generales móvil
+@media screen and ($max-sm) {
+  body {
+    font-size: 1.7em;
+  }
+  main {
+    margin: 4em 0.75em 1em; // Navegadores sin calc
+    margin: calc(#{$altura-cabecera} + 1em) 0.75em 1em;
+  }
+  h1, .main-title {
+    font-size: 1em;
+  }
+  h2,
+  h3 {
+    font-size: 0.85em;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  h3 {
+    font-size: 0.75em;
+  }
+  .nav-tabs {
+    font-size: 0.8em;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    & > li {
+      padding: 0.25em;
+
+      & > a {
+        // Posicionamiento vertical y corrección que evita movimientos al mostrar/ocultar el borde inferior:
+        display: block;
+        padding-bottom: 0.25em; // Navegadores sin calc
+        padding-bottom: calc(0.25em + 2px);
+
+        &.active {
+          padding-bottom: 0.25em;
+        }
+
+        &:hover {
+          padding-bottom: 0.25em;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+// importa tipografía desde google fonts
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;600;700;900&display=swap");
+
+/*Por defecto*/
+// asigna la tipografía por defecto
+$font-family-sans-serif: "Spartan", sans-serif;
+
+// modifica los colores por defecto de bootstrap
+$green: #41b883;
+$red: #e02d54;
+$blue: #000078;
+
+// colores personalizados
+$grey: #55536b;
+$grey-label: #8f8f8f;
+$grey-medium: #aaa;
+$grey-light: #f6f7fc;
+
+$light-blue: #73EDFF;
+
+$bg-color: #F7F7F8;
+$border-color: #ddd;
+$table-border-color: #e8e8e8;
+$text-color: #414141;
+$label-color: #8f8f8f;
+$bg-disabled: #f9f9f9;
+/**/
+
+/*Colores*/
+$color-fondo-principal: white;
+$color-fondo-secundario: #f7f7f8;
+$color-letra-principal: #414141;
+$color-letra-secundario: #8f8f8f;
+$color-enlaces-borde: #e02d54;
+/**/
+/*Estructura*/
+$altura-cabecera: 3em;
+/**/
+/*Otros*/
+$box-shadow-bottom: 0px 3px 3px -3px #d8d8d8;
+/**/
+
+// MAX SIZE:
+$max-xs: "max-width: 400px";
+$max-sm: "max-width: 575px";
+$max-md: "max-width: 767px";
+$max-lg: "max-width: 991px";
+$max-xl: "max-width: 1199px";
+
+// MIN SIZE:
+$min-xs: "min-width: 400px";
+$min-sm: "min-width: 575px";
+$min-md: "min-width: 767px";
+$min-lg: "min-width: 991px";
+$min-xl: "min-width: 1199px";

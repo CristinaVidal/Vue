@@ -1,0 +1,248 @@
+// Generales
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $text-color;
+  font-size: 16px;
+  max-width: 100%;
+  background: $bg-color;
+  font-family: "Spartan", sans-serif;
+  /*Internet Explorer:*/
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /**/
+}
+
+main {
+  margin: 5em 9em 1em; // Navegadores sin calc
+  margin: calc(#{$altura-cabecera} + 2em) 9em 1em;
+}
+h1,
+h2,
+h3 {
+  font-weight: 800;
+  font-size: 1.5em;
+  color: $color-letra-principal;
+}
+
+h2,
+h3 {
+  margin-top: 1.25em;
+}
+
+h2 {
+  font-size: 1.25em;
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+p {
+  text-align: center;
+}
+
+.alink {
+  font-weight: 600;
+  border-bottom: 1px solid $blue;
+
+  &:hover {
+    cursor: pointer;
+    border-color: $grey-medium;
+    color: $grey-medium;
+    text-decoration: none;
+  }
+}
+
+// titles
+
+.main-title {
+    font-weight: 900;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+// buttons
+
+.btn{
+    font-weight: 600;
+}
+
+// forms
+
+.form-control {
+    border-color: $border-color;
+    border-radius: 2px;
+    font-size: 14px;
+    padding: 8px 10px;
+    height: 40px;
+
+    &:focus{
+        box-shadow: 0 0 0 .2rem rgba(0, 0, 120,.15);
+        border-color: rgba(0, 0, 120,.4)
+    }
+
+    &:disabled{
+        background-color: $bg-disabled;
+    }
+}
+
+.contenedor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  &--principal {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    @media screen and ($max-sm) {
+      margin-top: 5.5em;
+    }
+  }
+
+  &--secundario {
+    background-color: $color-fondo-principal;
+    padding: 0 1.25em;
+  }
+}
+
+.texto {
+  &--xs {
+    font-size: 0.7em;
+  }
+  &--sm {
+    font-size: 0.75em;
+  }
+  &--md {
+    font-size: 0.8em;
+  }
+  &--lg {
+    font-size: 0.9em;
+  }
+}
+
+.input-icono {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+
+  &__button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    font-size: 0.9em;
+
+    &__icono {
+      color: $color-letra-secundario;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+    &:hover {
+      cursor: pointer;
+
+      & > i {
+        color: #757575;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    padding-left: 0;
+    margin-left: 0.5em;
+    background-color: transparent !important;
+    padding-bottom: 0.1em;
+    font-size: 1em;
+
+    &:focus {
+      /*Borde y sombra sobreescritos*/
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      -moz-border-radius: 0;
+      -webkit-border-radius: 0;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid $color-letra-secundario;
+      /**/
+    }
+
+    @media screen and ($max-md) {
+      font-size: 0.7em;
+    }
+
+    @media screen and ($max-sm) {
+      /*Borde y sombra sobreescritos*/
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      -moz-border-radius: 0;
+      -webkit-border-radius: 0;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid $color-letra-secundario;
+      /**/
+    }
+  }
+}
+
+// Contenedores de imágenes con texto en galerías
+.tarjeta {
+  &__imagen {
+    border: 1px solid rgb(204, 204, 204);
+    width: 100%;
+  }
+
+  &__titulo {
+    font-weight: 600;
+    color: $color-letra-principal;
+    font-size: 0.65em;
+    margin-top: 0.75em;
+    margin-bottom: 0.5em;
+
+    @media screen and ($max-sm) {
+      font-size: 0.8em;
+    }
+  }
+
+  &__subtitulo {
+    font-size: 0.6em;
+
+    @media screen and ($max-sm) {
+      font-size: 0.7em;
+    }
+  }
+}
+
+.col-sm-4 {
+  padding-bottom: 0.75em;
+}
+
+.rounded {
+  border-radius: 0.25em !important;
+}
+
+.form-caja-error {
+  border: 2px solid rgb(218, 10, 10);
+  background: rgba(218, 10, 10, 0.250);
+  padding: .25em .5em;
+  margin: 1em 0 .5em;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
